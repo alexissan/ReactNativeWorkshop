@@ -1,0 +1,13 @@
+{
+  "name": "iTunesMusic",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "events": "^1.0.2",
+    "object-assign": "^1.0.0",
+    "react-native": "^0.4.1"
+  }
+}
