@@ -22,22 +22,15 @@ function fullSizeUrl(thumbUrl) {
 }
 
 var AlbumDetailScreen = React.createClass({
-  getInitialState() {
-    return this.computedState();
-  },
 
-  computedState() {
-    return {
-      isFavorite: FavoritesStore.isFavorite(this.props.album)
-    }
+  getInitialState() {
+    return {};
   },
 
   componentDidMount() {
     // way of calculating relative size:
     // https://github.com/facebook/react-native/issues/953
     setTimeout(this.measureArtworkContainer);
-
-    FavoritesStore.on(FavoritesStore.CHANGE_EVENT, this.onFavoritesChange);
   },
 
   measureArtworkContainer() {
@@ -46,26 +39,18 @@ var AlbumDetailScreen = React.createClass({
     });
   },
 
-  componentWillUnmount() {
-    FavoritesStore.removeListener(FavoritesStore.CHANGE_EVENT, this.onFavoritesChange);
-  },
-
-  onFavoritesChange() {
-    this.setState(this.computedState());
-  },
-
   onShowMoreButtonPressed() {
     LinkingIOS.openURL(this.props.album.collectionViewUrl);
   },
 
   onFavoriteButtonPressed() {
-    FavoritesStore.toggleFavorite(this.props.album);
+
   },
 
   render() {
     var album = this.props.album;
     var year = yearFromReleaseDate(album.releaseDate);
-    var favoriteButtonText = this.state.isFavorite ? 'Unfavorite' : 'Favorite';
+    var favoriteButtonText = 'Favorite';
     var artworkContainerHeight = this.state.artworkContainerHeight;
 
     return (

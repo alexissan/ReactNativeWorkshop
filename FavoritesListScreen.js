@@ -24,7 +24,7 @@ var FavoritesListScreen = React.createClass({
   },
 
   componentWillUnmount() {
-    
+
   },
 
   onFavoritesChange() {
