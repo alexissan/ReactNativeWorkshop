@@ -5,19 +5,14 @@ var React = require('react-native');
 
 var {
   StyleSheet,
-  NavigatorIOS
+  View // Remove this view and add a NavigatorIOS
 } = React;
 
 var Albums = React.createClass({
   render() {
     return (
-      <NavigatorIOS
-        style={styles.container}
-        tintColor='#FE2E64'
-        initialRoute={{
-          title: 'Albums',
-          component: AlbumsSearchScreen
-        }}/>
+      /*Add a NavigatorIOS component here*/
+      <View />
     );
   }
 });

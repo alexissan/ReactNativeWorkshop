@@ -20,13 +20,11 @@ var FavoritesListScreen = React.createClass({
   },
 
   componentDidMount() {
-    FavoritesStore.on(FavoritesStore.CHANGE_EVENT, this.onFavoritesChange);
 
-    FavoritesStore.loadPersistedFavorites();
   },
 
   componentWillUnmount() {
-    FavoritesStore.removeListener(FavoritesStore.CHANGE_EVENT, this.onFavoritesChange);
+    
   },
 
   onFavoritesChange() {
