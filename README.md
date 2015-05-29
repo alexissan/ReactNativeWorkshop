@@ -9,7 +9,7 @@ There are included the slides used for a workshop organized by [@theevnt](http:/
 [React Native
 101](https://github.com/alexissan/ReactNativeWorkshop/raw/master/WhyReactNative.pdf)
 
-[SpeakerDeck: React Native 101](https://speakerdeck.com/alexissan/why-react-native)
+[SpeakerDeck: React Native 101](https://speakerdeck.com/alexissan/react-native-101)
 
 # Contact
 
@@ -41,7 +41,7 @@ Se incluye además las "transparencias" utilizadas en el workshop de [@theevnt](
 [React Native
 101](https://github.com/alexissan/ReactNativeWorkshop/raw/master/WhyReactNative.pdf)
 
-[SpeakerDeck: React Native 101](https://speakerdeck.com/alexissan/why-react-native)
+[SpeakerDeck: React Native 101](https://speakerdeck.com/alexissan/react-native-101)
 
 # Contacto
 
