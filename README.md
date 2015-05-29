@@ -9,6 +9,8 @@ There are included the slides used for a workshop organized by [@theevnt](http:/
 [React Native
 101](https://github.com/alexissan/ReactNativeWorkshop/raw/master/WhyReactNative.pdf)
 
+[SpeakerDeck: React Native 101](https://speakerdeck.com/alexissan/why-react-native)
+
 # Contact
 
 If you find some problem related to the o project or wants more info related to that, you can send an email to:
@@ -38,6 +40,8 @@ Se incluye además las "transparencias" utilizadas en el workshop de [@theevnt](
 
 [React Native
 101](https://github.com/alexissan/ReactNativeWorkshop/raw/master/WhyReactNative.pdf)
+
+[SpeakerDeck: React Native 101](https://speakerdeck.com/alexissan/why-react-native)
 
 # Contacto
 
