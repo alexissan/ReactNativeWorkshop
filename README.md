@@ -17,6 +17,14 @@ vpimentel@tuenti.com
 
 asantos@tuenti.com
 
+# Screenshots
+
+![](/Screenshots/scsh1.png?raw=true)
+![](/Screenshots/scsh2.png?raw=true)
+![](/Screenshots/scsh3.png?raw=true)
+![](/Screenshots/scsh4.png?raw=true)
+
+
 
 
 
