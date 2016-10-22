@@ -17,14 +17,14 @@
 #import <Foundation/Foundation.h>
 #import <Security/SecCertificate.h>
 
-typedef enum {
+typedef NS_ENUM(unsigned int, RCTSRReadyState) {
     RCTSR_CONNECTING   = 0,
     RCTSR_OPEN         = 1,
     RCTSR_CLOSING      = 2,
     RCTSR_CLOSED       = 3,
-} RCTSRReadyState;
+};
 
-typedef enum RCTSRStatusCode : NSInteger {
+typedef NS_ENUM(NSInteger, RCTSRStatusCode) {
     RCTSRStatusCodeNormal = 1000,
     RCTSRStatusCodeGoingAway = 1001,
     RCTSRStatusCodeProtocolError = 1002,
@@ -35,7 +35,7 @@ typedef enum RCTSRStatusCode : NSInteger {
     RCTSRStatusCodeInvalidUTF8 = 1007,
     RCTSRStatusCodePolicyViolated = 1008,
     RCTSRStatusCodeMessageTooBig = 1009,
-} RCTSRStatusCode;
+};
 
 @class RCTSRWebSocket;
 
@@ -60,17 +60,17 @@ extern NSString *const RCTSRHTTPResponseErrorKey;
 @property (nonatomic, readonly, copy) NSString *protocol;
 
 // Protocols should be an array of strings that turn into Sec-WebSocket-Protocol.
-- (instancetype)initWithURLRequest:(NSURLRequest *)request protocols:(NSArray *)protocols NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithURLRequest:(NSURLRequest *)request protocols:(NSArray<NSString *> *)protocols NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithURLRequest:(NSURLRequest *)request;
 
 // Some helper constructors.
-- (instancetype)initWithURL:(NSURL *)url protocols:(NSArray *)protocols;
+- (instancetype)initWithURL:(NSURL *)url protocols:(NSArray<NSString *> *)protocols;
 - (instancetype)initWithURL:(NSURL *)url;
 
 // Delegate queue will be dispatch_main_queue by default.
 // You cannot set both OperationQueue and dispatch_queue.
-- (void)setDelegateOperationQueue:(NSOperationQueue*) queue;
-- (void)setDelegateDispatchQueue:(dispatch_queue_t) queue;
+- (void)setDelegateOperationQueue:(NSOperationQueue *)queue;
+- (void)setDelegateDispatchQueue:(dispatch_queue_t)queue;
 
 // By default, it will schedule itself on +[NSRunLoop RCTSR_networkRunLoop] using defaultModes.
 - (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;

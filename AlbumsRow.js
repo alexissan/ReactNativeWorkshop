@@ -1,28 +1,28 @@
 'use strict';
 
-var React = require('react-native');
+import React, { Component } from 'react';
 
-var {
+import {
   StyleSheet,
   View,
   TouchableHighlight,
   Text,
   Image
-} = React;
+} from 'react-native';
 
 function yearFromReleaseDate(releaseDate) {
-  return (new Date(releaseDate)).getFullYear()
+  return (new Date(releaseDate)).getFullYear();
 }
 
 var AlbumsRow = React.createClass({
   render() {
     var album = this.props.rowData;
-    var year = yearFromReleaseDate(album.releaseDate)
+    var year = yearFromReleaseDate(album.releaseDate);
 
     return (
       <TouchableHighlight
         onPress={this.props.onPress}
-        underlayColor='#CCCCCC'>
+        underlayColor="#CCCCCC">
         <View>
           <View style={styles.rowContainer}>
             <Image style={styles.thumb} source={{uri: album.artworkUrl100}} />
@@ -40,7 +40,7 @@ var AlbumsRow = React.createClass({
   }
 });
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: 'row',
     padding: 10

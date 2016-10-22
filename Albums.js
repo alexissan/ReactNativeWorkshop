@@ -1,12 +1,12 @@
 'use strict';
 
 var AlbumsSearchScreen = require('./AlbumsSearchScreen');
-var React = require('react-native');
+import React, { Component } from 'react';
 
-var {
+import {
   StyleSheet,
   NavigatorIOS
-} = React;
+} from 'react-native';
 
 var Albums = React.createClass({
   render() {

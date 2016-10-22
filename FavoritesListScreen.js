@@ -3,11 +3,11 @@
 var AlbumsRow = require('./AlbumsRow');
 var AlbumDetailScreen = require('./AlbumDetailScreen');
 var FavoritesStore = require('./FavoritesStore');
-var React = require('react-native');
+var React = require('react');
 
-var {
+import {
   ListView
-} = React;
+} from 'react-native';
 
 var FavoritesListScreen = React.createClass({
 
@@ -56,6 +56,7 @@ var FavoritesListScreen = React.createClass({
   render() {
     return (
       <ListView
+        enableEmptySections={true}
         dataSource={this.state.dataSource}
         renderRow={this.renderRow} />
     );

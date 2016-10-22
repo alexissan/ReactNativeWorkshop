@@ -4,11 +4,11 @@
 // https://nodejs.org/api/events.html
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-var React = require('react-native');
+var React = require('react');
 
-var {
+import {
   AsyncStorage
-} = React;
+} from 'react-native';
 
 var STORAGE_KEY = 'iTunesCatalog:Favorites';
 

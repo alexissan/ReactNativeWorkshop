@@ -18,11 +18,10 @@
 
 ---
 
-![](http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Grumpy-No-Meme-Images.jpg)
+![fit](http://i1.wp.com/www.universetoday.com/wp-content/uploads/2015/02/7_grumpy.jpg)
 
 ---
-
-### Desarrollar apps en 2015
+### Desarrollar apps en 2016
 
 1. Ciclo de desarrollo *lento*
 1. Ciclo de release *eterno*
@@ -39,7 +38,7 @@
 
 ---
 
-### Webviews en 2015
+### Webviews en 2016
 
 1. Rendimiento *pobre*
 1. Experiencia de usuario *inferior*
@@ -47,7 +46,7 @@
 
 ---
 
-### Webviews en 2015
+### Webviews en 2016
 
 <br />
 
@@ -68,7 +67,7 @@
 
 ---
 
-### React Native en 2015
+### React Native en 2016
 
 1. ~~Ciclo de desarrollo lento~~ *Recarga instantánea*
 1. ~~Ciclo de release lento~~ *Actualizaciones OTA legales* [!!!](https://developer.apple.com/programs/ios/information/iOS_Program_Information_4_3_15.pdf)
@@ -96,7 +95,7 @@
 
 ---
 
-### React Native en 2015
+### React Native en 2016
 
 1. ~~Rendimiento pobre~~ *Árbol de vistas virtual*
 1. ~~Experiencia de usuario inferior~~ *Vistas nativas*
@@ -108,7 +107,7 @@
 
 ---
 
-### Apps en 2015
+### Apps en 2016
 
 - Hacer aplicaciones *dinámicas* es complicado
 - Pocos estados -> muchas transiciones
@@ -129,7 +128,7 @@
 1. *Reutilizar*
 1. *Testear*
 
-![](http://fc00.deviantart.net/fs71/f/2014/192/7/6/ancient_aliens_guy_hd_meme_by_pstrooper-d7p5dz1.png)
+![](http://forum.mygolfspy.com/uploads/monthly_02_2015/post-872-0-21232900-1423003837.jpg)
 
 ---
 
@@ -178,13 +177,26 @@ render: function(state) {
 
 ---
 
+### *Herramientas*
+
+- Visual Studio Code, Sublime, Atom, ...
+- Nuclide
+- ESLint
+
+---
+
 ## *¿Debería usarlo?*
 
 - Muy *joven*, no es 100% estable/completo
 - Comunidad muy *activa*
-- Un par de apps de Facebook ya en la *AppStore*
-- Disponible para *Android* pronto
-- Nuclide: *IDE* específico próximamente
+- Varias apps de Facebook ya en la *AppStore*
+- Disponible para *Android*
+
+---
+
+# *DEMO!!*
+
+![fit](http://i.giphy.com/xT8qB2HYA1vVSxooSY.gif)
 
 ---
 
@@ -196,6 +208,4 @@ render: function(state) {
 
 ---
 
-# [fit] _¡A programar!_
-
-![](http://images6.fanpop.com/image/photos/32100000/Wallpaper-braveheart-32189752-1920-1080.jpg)
+# *Preguntas*

@@ -1,53 +1,53 @@
 'use strict'
 
-var AlbumsListScreen = require('./AlbumsListScreen');
-var React = require('react-native');
+var AlbumsListScreen = require('./AlbumsListScreen')
+import React, { Component } from 'react'
 
-var {
+import {
   StyleSheet,
   View,
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   Text,
   TextInput,
   TouchableHighlight,
   Image,
   ScrollView
-} = React;
+} from 'react-native'
 
-var iTunesSearchURL = 'https://itunes.apple.com/search?';
+var iTunesSearchURL = 'https://itunes.apple.com/search?'
 
-function urlForAlbumsQueryWithResultsLimit(query, resultsLimit) {
+function urlForAlbumsQueryWithResultsLimit (query, resultsLimit) {
   var data = {
     entity: 'album',
     term: query,
     limit: resultsLimit
-  };
+  }
 
   var queryString = Object.keys(data)
     .map(key => key + '=' + encodeURIComponent(data[key]))
-    .join('&');
+    .join('&')
 
-  return iTunesSearchURL + queryString;
+  return iTunesSearchURL + queryString
 };
 
 var AlbumsSearchScreen = React.createClass({
 
-  getInitialState() {
+  getInitialState () {
     return {
       isLoading: false,
       errorMessage: '',
-      searchString: '',
-    };
+      searchString: ''
+    }
   },
 
-  onSearchTextChanged(event) {
-    this.setState({searchString: event.nativeEvent.text});
+  onSearchTextChanged (event) {
+    this.setState({searchString: event.nativeEvent.text})
   },
 
-  _executeQuery(query) {
-    console.log(query);
+  _executeQuery (query) {
+    console.log(query)
 
-    this.setState({ isLoading: true, errorMessage: '' });
+    this.setState({ isLoading: true, errorMessage: '' })
 
     fetch(query)
       .then(response => response.json())
@@ -55,41 +55,41 @@ var AlbumsSearchScreen = React.createClass({
       .catch(error => this.setState({
         isLoading: false,
         errorMessage: 'Something bad happened: \n' + error
-      }));
+      }))
   },
 
-  _handleResponse(results) {
-    this.setState({ isLoading: false });
+  _handleResponse (results) {
+    this.setState({ isLoading: false })
 
     if (results.length > 0) {
       this.props.navigator.push({
         title: this.state.searchString,
         component: AlbumsListScreen,
         passProps: {albums: results}
-      });
+      })
     } else {
-      this.setState({ errorMessage: "Can't find albums for your search input." });
+      this.setState({ errorMessage: "Can't find albums for your search input." })
     }
   },
 
-  searchAlbums() {
-    var query = urlForAlbumsQueryWithResultsLimit(this.state.searchString, 200);
-    this._executeQuery(query);
+  searchAlbums () {
+    var query = urlForAlbumsQueryWithResultsLimit(this.state.searchString, 200)
+    this._executeQuery(query)
   },
 
-  onSearchTextSubmitEditing(event) {
-    this.searchAlbums();
+  onSearchTextSubmitEditing (event) {
+    this.searchAlbums()
   },
 
-  render() {
+  render () {
     var spinner = this.state.isLoading ?
-      <ActivityIndicatorIOS size='large' /> :
-      <View />;
+      <ActivityIndicator size='large' /> :
+      <View />
 
     return (
       <ScrollView alwaysBounceVertical={false}>
         <View style={styles.container}>
-          <Image source={require('image!itunes_logo')} style={styles.image} />
+          <Image source={require('./Assets/itunes_logo.png')} style={styles.image} />
           <Text style={styles.description}>
             Search by artist, album or genre:
           </Text>
@@ -104,9 +104,9 @@ var AlbumsSearchScreen = React.createClass({
           <Text style={styles.description}>{this.state.errorMessage}</Text>
         </View>
       </ScrollView>
-    );
+    )
   }
-});
+})
 
 var styles = StyleSheet.create({
   container: {
@@ -117,7 +117,7 @@ var styles = StyleSheet.create({
   description: {
     marginBottom: 20,
     fontSize: 18,
-    color: '#656565',
+    color: '#656565'
   },
 
   searchInput: {
@@ -127,13 +127,13 @@ var styles = StyleSheet.create({
     fontSize: 18,
     borderWidth: 1,
     borderColor: '#FF8000',
-    borderRadius: 8,
+    borderRadius: 8
   },
 
   image: {
     width: 100,
-    height: 100,
+    height: 100
   }
-});
+})
 
-module.exports = AlbumsSearchScreen;
+module.exports = AlbumsSearchScreen

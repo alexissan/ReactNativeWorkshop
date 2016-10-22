@@ -15,6 +15,24 @@
 @synthesize leftButtonItem = _leftButtonItem;
 @synthesize rightButtonItem = _rightButtonItem;
 
+- (UIImageView *)titleImageView
+{
+  if (_titleImage) {
+    return [[UIImageView alloc] initWithImage:_titleImage];
+  } else {
+    return nil;
+  }
+}
+
+-(instancetype)init
+{
+  if (self = [super init]) {
+    _leftButtonSystemIcon = NSNotFound;
+    _rightButtonSystemIcon = NSNotFound;
+  }
+  return self;
+}
+
 - (void)setBackButtonTitle:(NSString *)backButtonTitle
 {
   _backButtonTitle = backButtonTitle;
@@ -59,24 +77,46 @@
   _leftButtonItem = nil;
 }
 
+- (void)setLeftButtonSystemIcon:(UIBarButtonSystemItem)leftButtonSystemIcon
+{
+  _leftButtonSystemIcon = leftButtonSystemIcon;
+  _leftButtonItem = nil;
+}
+
 - (UIBarButtonItem *)leftButtonItem
 {
   if (!_leftButtonItem) {
     if (_leftButtonIcon) {
-      _leftButtonItem = [[UIBarButtonItem alloc] initWithImage:_leftButtonIcon
-                                                         style:UIBarButtonItemStylePlain
-                                                        target:nil
-                                                        action:nil];
+      _leftButtonItem =
+      [[UIBarButtonItem alloc] initWithImage:_leftButtonIcon
+                                       style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(handleLeftButtonPress)];
+
     } else if (_leftButtonTitle.length) {
-      _leftButtonItem = [[UIBarButtonItem alloc] initWithTitle:_leftButtonTitle
-                                                         style:UIBarButtonItemStylePlain
-                                                        target:nil
-                                                        action:nil];
+      _leftButtonItem =
+      [[UIBarButtonItem alloc] initWithTitle:_leftButtonTitle
+                                       style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(handleLeftButtonPress)];
+
+    } else if (_leftButtonSystemIcon != NSNotFound) {
+      _leftButtonItem =
+      [[UIBarButtonItem alloc] initWithBarButtonSystemItem:_leftButtonSystemIcon
+                                                    target:self
+                                                    action:@selector(handleLeftButtonPress)];
     } else {
       _leftButtonItem = nil;
     }
   }
   return _leftButtonItem;
+}
+
+- (void)handleLeftButtonPress
+{
+  if (_onLeftButtonPress) {
+    _onLeftButtonPress(nil);
+  }
 }
 
 - (void)setRightButtonTitle:(NSString *)rightButtonTitle
@@ -91,24 +131,46 @@
   _rightButtonItem = nil;
 }
 
+- (void)setRightButtonSystemIcon:(UIBarButtonSystemItem)rightButtonSystemIcon
+{
+  _rightButtonSystemIcon = rightButtonSystemIcon;
+  _rightButtonItem = nil;
+}
+
 - (UIBarButtonItem *)rightButtonItem
 {
   if (!_rightButtonItem) {
     if (_rightButtonIcon) {
-      _rightButtonItem = [[UIBarButtonItem alloc] initWithImage:_rightButtonIcon
-                                                          style:UIBarButtonItemStylePlain
-                                                         target:nil
-                                                         action:nil];
+      _rightButtonItem =
+      [[UIBarButtonItem alloc] initWithImage:_rightButtonIcon
+                                       style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(handleRightButtonPress)];
+
     } else if (_rightButtonTitle.length) {
-      _rightButtonItem = [[UIBarButtonItem alloc] initWithTitle:_rightButtonTitle
-                                                          style:UIBarButtonItemStylePlain
-                                                         target:nil
-                                                         action:nil];
+      _rightButtonItem =
+      [[UIBarButtonItem alloc] initWithTitle:_rightButtonTitle
+                                       style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(handleRightButtonPress)];
+
+    } else if (_rightButtonSystemIcon != NSNotFound) {
+      _rightButtonItem =
+      [[UIBarButtonItem alloc] initWithBarButtonSystemItem:_rightButtonSystemIcon
+                                      target:self
+                                      action:@selector(handleRightButtonPress)];
     } else {
       _rightButtonItem = nil;
     }
   }
   return _rightButtonItem;
+}
+
+- (void)handleRightButtonPress
+{
+  if (_onRightButtonPress) {
+    _onRightButtonPress(nil);
+  }
 }
 
 @end

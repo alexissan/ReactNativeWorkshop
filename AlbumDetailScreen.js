@@ -1,9 +1,9 @@
 'use strict';
 
-var React = require('react-native');
+import React, { Component } from 'react';
 var FavoritesStore = require('./FavoritesStore');
 
-var {
+import {
   StyleSheet,
   View,
   ScrollView,
@@ -11,7 +11,7 @@ var {
   Text,
   Image,
   LinkingIOS
-} = React;
+} from 'react-native';
 
 function yearFromReleaseDate(releaseDate) {
   return (new Date(releaseDate)).getFullYear();
@@ -137,7 +137,7 @@ var styles = StyleSheet.create({
   },
 
   showMoreButton: {
-    backgroundColor: '#FE2E64',
+    backgroundColor: '#000000',
   },
 
   buttonText: {

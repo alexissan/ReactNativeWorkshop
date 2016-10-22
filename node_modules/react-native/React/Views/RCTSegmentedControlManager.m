@@ -19,21 +19,14 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  return [[RCTSegmentedControl alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
+  return [RCTSegmentedControl new];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(values, NSStringArray)
+RCT_EXPORT_VIEW_PROPERTY(values, NSArray<NSString *>)
 RCT_EXPORT_VIEW_PROPERTY(selectedIndex, NSInteger)
 RCT_EXPORT_VIEW_PROPERTY(tintColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(momentary, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(enabled, BOOL)
-
-- (NSDictionary *)constantsToExport
-{
-  RCTSegmentedControl *view = [[RCTSegmentedControl alloc] init];
-  return @{
-    @"ComponentHeight": @(view.intrinsicContentSize.height),
-  };
-}
+RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock)
 
 @end

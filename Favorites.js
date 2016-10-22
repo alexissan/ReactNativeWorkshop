@@ -1,12 +1,12 @@
 'use strict';
 
 var FavoritesListScreen = require('./FavoritesListScreen');
-var React = require('react-native');
+import React, { Component } from 'react';
 
-var {
+import {
   StyleSheet,
   NavigatorIOS
-} = React;
+} from 'react-native';
 
 var Favorites = React.createClass({
   render() {
